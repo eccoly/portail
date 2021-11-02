@@ -1,0 +1,362 @@
+<!doctype html>
+
+<style>
+    html {
+        background-color:#f7f7f7;
+        background-image: url('./assets/background.png');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        height: 100%;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: Charcoal, sans-serif;
+        overflow-y: auto;
+    }
+
+    a, a:visited {
+        color:#782870;
+        transition: color 0.2s;
+    }
+    a:hover {
+        color: #56154f;
+        transition: color 0.2s;
+    }
+
+    main {
+        position: absolute;
+        display: flex;
+        z-index: 10000;
+        color: #fff;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    main img {
+        padding: 30px;
+    }
+    main p {
+        font-size: 1.4rem;
+        word-wrap: break-word;
+        text-align: right;
+        line-height: 2;
+        padding: 50px;
+        margin-left: 100px;
+    }
+
+    #portail {
+        z-index: 100;
+        position: relative;
+        width: 100%;
+        margin-top: -100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .etablissement {
+        margin: 0 15px 15px 15px;
+        background-color: #fff;
+        width: 300px;
+        text-align: center;
+        color: #4e4e4e;
+        border-radius: 3px;
+        padding-bottom: 1rem;
+        box-shadow: 1px 1px 10px 0px rgb(65, 65, 65, 0.5);
+    }
+
+    .etablissement .inner-img {
+        overflow: hidden;
+        height: 150px;
+        border-radius: 3px;
+    }
+
+    .etablissement a.link {
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .etablissement .details {
+        text-align: left;
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .etablissement .details .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .etablissement .details .title img {
+        margin-right: 1.5rem;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .etablissement .inner-img img {
+        object-fit: cover;
+        transition: transform 0.7s;
+    }
+
+    .etablissement:hover .inner-img img {
+        transform: scale(1.2);
+        transition: transform ease 1s;
+    }
+
+    .etablissement .details h2 {
+        font-size: 1.1em;
+        font-weight: 600;
+        word-wrap: breack-word;
+    }
+
+    .etablissement .details .mdi {
+        margin-right: 0.5rem;
+    }
+
+    .etablissement .details address {
+        font-style: normal;
+        margin-bottom: 0.3rem;
+        display: flex;
+    }
+
+    .etablissement .details address div {
+        display: inline;
+    }
+
+    .etablissement .details a {
+        text-decoration: none;
+    }
+
+    div#slider {
+        overflow: hidden;
+        height: 500px;
+    }
+    div#slider figure img {
+        width: 20%; float: left;
+    }
+    div#slider figure {
+        z-index: 10; 
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        text-align: left;
+        font-size: 0;
+        animation: 30s slidy infinite; 
+    }
+
+    .phone {
+        margin-bottom: 0.5rem;
+    }
+
+    #slider figure img {
+        filter: brightness(50%);
+    }
+
+    #annonce {
+        text-align: center;
+    }
+
+    /* ----------- iPhone X ----------- */
+    /* Portrait and Landscape */
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 812px) 
+    and (-webkit-min-device-pixel-ratio: 3) { 
+    }
+
+    /* Portrait */
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 812px) 
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .etablissement .details,
+        .etablissement a.link {
+            font-size: 2rem;
+        }
+
+        main > p,
+        figure,
+        .inner-img {
+            display: none;
+        }
+
+        main {
+            width: 100%;
+            justify-content: center;
+        }
+
+        #portail {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .etablissement {
+            width: 90%;
+            margin-bottom: 2rem;
+        }
+
+        .etablissement .details h2 {
+            font-size: 2.2rem;
+        }
+    }
+
+    /* Landscape */
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 812px) 
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape) { 
+
+    }
+
+    @keyframes slidy {
+        0% { left: 0%; }
+        20% { left: 0%; }
+        25% { left: -100%; }
+        45% { left: -100%; }
+        50% { left: -200%; }
+        70% { left: -200%; }
+        75% { left: -300%; }
+        95% { left: -300%; }
+        100% { left: -400%; }
+    }
+</style>
+
+<html lang="fr">
+    <head>
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css"/>
+        <title>&Eacute;ccoly</title>
+        <link rel="icon" type="image/png" href="./assets/logo@32.png"/>
+    </head>
+    <body>
+        <div id="slider">
+            <main>
+                <img src="./assets/logo.png" alt="Eccoly" height="350"/>
+                <p>&Eacute;ccoly est un r&eacute;seau d'&eacute;tablissements catholiques priv&eacute;s sous contrat avec l'&Eacute;tat, qui ont uni leurs moyens et leurs ressources p&eacute;dagogiques. Chaque &eacute;tablissement a son histoire et ses sp&eacute;cificit&eacute;s, les choix p&eacute;dagogiques sont divers, mais tous se retrouvent autour de valeurs communes : prise en compte et respect des diff&eacute;rences, &eacute;panouissement de chaque &eacute;l&egrave;ve, engagement vers le futur et l'innovation dans le respect des valeurs chr&eacute;tiennes.</p>
+            </main>
+            <figure>
+                <img src="./assets/images/slider1.jpg" alt>
+                <img src="./assets/images/slider2.jpg" alt>
+                <img src="./assets/images/slider3.jpg" alt>
+                <img src="./assets/images/slider4.jpg" alt>
+                <img src="./assets/images/slider5.jpg" alt>
+            </figure>
+        </div>
+
+        <section id="portail">
+            <div class="etablissement">
+                <div class="inner-img">
+                    <img src="./assets/images/lolivier.jpeg" alt="" width="300" height="150"/>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <img src="./assets/logos/lolivier.png" alt="" width="100"/>
+                        <h2>Lyc&eacute;e l'Olivier Robert Coffy</h2>
+                    </div>
+                    
+                    <address>
+                        <span class="mdi mdi-map-marker"></span>
+                        <div>14 rue Robert Coffy<br/>13012 Marseille</div>
+                    </address>
+                    <span class="mdi mdi-phone"></span><a class="phone" href="telto:0491939550">04 91 93 95 50</a><br/>
+                    <span class="mdi mdi-email"></span><a href="mailto:lolivier@eccoly.net">lolivier@eccoly.net</a>
+                </div>
+                <a class="link" href="https://www.lycee-lolivier.fr" target="_blank" rel="noopener noreferrer">www.lycee-lolivier.fr</a>
+            </div>
+
+            <div class="etablissement">
+                <div class="inner-img">
+                    <img src="./assets/images/stemarieblancarde.jpg" alt="" width="300" height="150"/>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <img src="./assets/logos/stemarieblancarde.png" alt="" width="100"/>
+                        <h2>Sainte-Marie Blancarde</h2>
+                    </div>
+                    
+                    <address>
+                        <span class="mdi mdi-map-marker"></span>
+                        <div>26 Rue Poucel 13004<br/>Marseille</div>
+                    </address>
+                    <span class="mdi mdi-phone"></span><a class="phone" href="telto:0491185020">04 91 18 50 20</a><br/>
+                    <span class="mdi mdi-email"></span><a href="mailto:secretsmb@orange.fr">secretsmb@orange.fr</a>
+                </div>
+                <a class="link" href="https://www.saintemarieblancarde.fr" target="_blank" rel="noopener noreferrer">www.saintemarieblancarde.fr</a>
+            </div>
+
+            <div class="etablissement">
+                <div class="inner-img">
+                    <img src="./assets/images/stcharles.jpg" alt="" width="300" height="150"/>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <img src="./assets/logos/stcharles.png" alt="" width="100"/>
+                        <h2>Saint-Charles Camas</h2>
+                    </div>
+                    
+                    <address>
+                        <span class="mdi mdi-map-marker"></span>
+                        <div>21 rue du Camas<br/>13005 Marseille</div>
+                    </address>
+                    <span class="mdi mdi-phone"></span><a class="phone" href="telto:0495081240">04 95 08 12 40</a><br/>
+                    <span class="mdi mdi-email"></span><a href="mailto:stcharlescamas.dir@wanadoo.fr">stcharlescamas.dir@wanadoo.fr</a>
+                </div>
+                <a class="link" href="http://www.stcharles-camas.com/" target="_blank" rel="noopener noreferrer">www.stcharles-camas.com/</a>
+            </div>
+
+            <div class="etablissement">
+                <div class="inner-img">
+                    <img src="./assets/images/stmichel.jpg" alt="" width="300" height="150"/>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <img src="./assets/logos/stmichel.png" alt="" width="100"/>
+                        <h2>Saint-Michel</h2>
+                    </div>
+                    
+                    <address>
+                        <span class="mdi mdi-map-marker"></span>
+                        <div>75, rue Saint-Savournin<br/>13005 Marseille</div>
+                    </address>
+                    <span class="mdi mdi-phone"></span><a class="phone" href="telto:0496125160">04 96 12 51 60</a><br/>
+                    <span class="mdi mdi-email"></span><a href="mailto:saint.michel@eccoly.net">saint.michel@eccoly.net</a>
+                </div>
+                <a class="link" href="https://lycee-stmichel.fr/" target="_blank" rel="noopener noreferrer">lycee-stmichel.fr</a>
+            </div>
+
+            <div class="etablissement">
+                <div class="inner-img">
+                    <img src="./assets/images/stbarnabe.jpg" alt="" width="300" height="150"/>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <img src="./assets/logos/stbarnabe.png" alt="" width="100"/>
+                        <h2>Saint-Barnab&eacute;</h2>
+                    </div>
+                    
+                    <address>
+                        <span class="mdi mdi-map-marker"></span>
+                        <div>2 rue L&eacute;on Meisserel<br/>13012 Marseille</div>
+                    </address>
+                    <span class="mdi mdi-phone"></span><a href="telto:0491496930">04 91 49 69 30</a><br/>
+                    <span class="mdi mdi-email"></span><a href="#"></a>
+                </div>
+                <a class="link" href="https://www.ecole-stbarnabe.fr" target="_blank" rel="noopener noreferrer">www.ecole-stbarnabe.fr</a>
+            </div>
+        </section>
+
+        <section id="annonce">
+            <p>
+                <b>Dans le cadre du calcul de l'index de l'&eacute;galit&eacute; professionnelle, le R&eacute;seau ECCOLY obtient le r&eacute;sultat de 75 points sur 100 en 2020.</b><br/>
+                Ce r&eacute;sultat prend en compte entre femmes et hommes : la suppression d'&eacute;cart de salaires &agrave; poste et &acirc;ge comparables (35/40 points) ; la m&ecirc;me chance d'avoir une augmentation (35/35 points) ; l'augmentation au retour des cong&eacute;s maternit&eacute; (0/15 points) ; au moins 4 femmes ou hommes dans 10 des plus hautes r&eacute;mun&eacute;rations (5/10 points).  
+            </p>
+        </section>
+    </body>
+</html>
